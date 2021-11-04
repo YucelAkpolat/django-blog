@@ -8,4 +8,10 @@ from blog.models import YazilarModel
 admin.site.register(KategoryModel)
 
 
-admin.site.register(YazilarModel)
+class YazilarAdmin(admin.ModelAdmin):
+    search_fields=('baslik','icerik')
+    list_display=(
+        'baslik','olusturulma_tarih','duzenlenme_tarihi'
+    )
+
+admin.site.register(YazilarModel, YazilarAdmin)
