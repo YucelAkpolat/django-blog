@@ -16,7 +16,7 @@ class YazilarModel(models.Model):
     duzenlenme_tarihi = models.DateField(auto_now=True)
     slug = AutoSlugField(populate_from='baslik',unique=True)
     kategoriler = models.ManyToManyField(KategoryModel,related_name='yazi')
-    yazar = models.ForeignKey(User,on_delete=CASCADE,related_name='yazilar')
+    yazar = models.ForeignKey(User,on_delete=models.CASCADE,related_name='yazilar')
 
 
     class Meta:
